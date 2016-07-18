@@ -84,11 +84,11 @@ author:
   name: ranranra      ## e.g. wuchong Author name
   intro_line1:  "Hello ,I'm Ranranra in Heilongjiang."    ## your introduction on the bottom of the page
   intro_line2:  "Too simple, sometimes naive."  ## the 2nd line
-  weibo: 444444默     ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
+  weibo: ranranra6     ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   #weibo_verifier: 9d4bc461 ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   #tsina: 9d4bc461     ## e.g. 2176287895  Your weibo ID,It will be used in share button.
   #douban: 74961542    ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
-  zhihu: 她然     ## e.g. jark  for http://www.zhihu.com/people/jark
+  zhihu: ranranra     ## e.g. jark  for http://www.zhihu.com/people/jark
   email: 861513646@qq.com     ## e.g. imjark@gmail.com
   #twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
   github: ranranra    ## e.g. wuchong for https://github.com/wuchong
