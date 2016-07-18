@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>我的提现银行卡</title>
+    <link rel="stylesheet" type="text/css" href="./../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../frozenui-1.3.0/css/frozen.css"/>
+    <style>
+        .card {
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin: 10px 0;
+            padding: 0 20px;
+            background: #fff;
+        }
+        .card .cardname {
+            font-size: 14px;
+            color: #777;
+        }
+        .card .cardnum {
+            font-size: 20px;
+            font-weight: normal;
+        }
+        .card .username {
+            display: block;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <header class="ui-border-b">
+         <span class="ui-icon-return"></span>
+         <h1>我的提现银行卡</h1>
+     </header>
+    <section>
+        <ul class="ui-row ui-whitespace ui-list-pure">
+            <li class="card">
+                <p class="cardname">中国建设银行</p>
+                <strong class="cardnum">6222 0458 1568 2899 054</strong>
+                <span class="username">李德明</span>
+            </li>
+            <li class="card">
+                <p class="cardname">中国建设银行</p>
+                <strong class="cardnum">6222 0458 1568 2899 054</strong>
+                <span class="username">李德明</span>
+            </li>
+            <li class="card">
+                <p class="cardname">中国建设银行</p>
+                <strong class="cardnum">6222 0458 1568 2899 054</strong>
+                <span class="username">李德明</span>
+            </li>
+        </ul>
+        <div class="ui-btn-wrap">
+            <button id="add" class="ui-btn-lg ui-btn-primary">添加一张银行卡</button>
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="./../../script/api.js"></script>
+<script type="text/javascript" src="./../../frozenui-1.3.0/lib/zepto.min.js"></script>
+<script type="text/javascript" src="./../../script/comment.js"></script>
+<script>
+apiready = function(){
+    var oReturn = $api.dom('.ui-icon-return');
+    var oLi = $api.domAll('li');
+    var oAdd = $api.byId('add');
+    $api.addEvt(oReturn, 'click', function () {
+        close();
+    });
+
+    $api.addEvt(oAdd, 'click', function () {
+        api.openFrame({
+            name: 'myadd', 
+            url: './myadd.html',
+            animation: 'push',
+            bounces: false,
+            rect: {
+                x: 0,
+                y: 0,
+                w: 'auto',
+                h: 'auto',
+                marginBottom: 60 
+            }
+        });
+    });
+
+    function close () {
+        api.closeFrame({
+            name: 'mycard'
+        });
+    }
+
+}
+        
+</script>
+</html>

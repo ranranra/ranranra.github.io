@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>我的</title>
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="../frozenui-1.3.0/css/frozen.css"/>
+    <style>
+        .empty{ text-align: center; padding: 120px 0; }
+    </style>
+</head>
+<body>
+	<section class="ui-container">
+		<div class="ui-avatar-one"><span style="background-image:url(http://placeholder.qiniudn.com/140x140)"></span></div>
+	</section>
+	<script type="text/javascript">
+		apiready = function(){
+		   var personalCenter = api.require('personalCenter');
+		   personalCenter.open({
+		           imgPath: 'widget://res/img/ic/personalCenter.jpg',
+		           placeholderImg: 'widget://res/filterMe.png',
+		           btnArray: [{
+		               bgImg: 'widget://res/personal_btn_nor.png',
+		               selectedImg: 'widget://res/personal_btn_sele.png'
+		           }, {
+		              bgImg: 'widget://res/personal_btn_nor.png',
+		              selectedImg: 'widget://res/personal_btn_sele.png'
+		           }, {
+		               bgImg: 'widget://res/personal_btn_nor.png',
+		               selectedImg: 'widget://res/personal_btn_sele.png'
+		           }]
+		   },function( ret, err ){
+		       if( ret ){
+		            alert( JSON.stringify( ret ) );
+		       }else{
+		            alert( JSON.stringify( err ) );
+		       }
+		   }); 
+		}
+	</script>
+</body>
+</html>

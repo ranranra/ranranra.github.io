@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>我的提现银行卡</title>
+    <link rel="stylesheet" type="text/css" href="./../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../frozenui-1.3.0/css/frozen.css"/>
+    <style type="text/css">
+    .ui-btn-wrap {
+        margin-top: 10px;
+    }
+    .wyt-info {
+        margin: 0 20px;
+    }
+    </style>
+</head>
+<body>
+    <header class="ui-border-b">
+         <span class="ui-icon-return"></span>
+         <h1>我的提现银行卡</h1>
+    </header>
+    <section class="wyt-block">
+        <div class="ui-border-b wyt-title">
+            <h5>提现银行卡</h5>
+        </div>
+        <form>
+            <div class="ui-form-item ui-border-b">
+                <label>银行</label>
+                <input type="text" placeholder="建设银行">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+            <div class="ui-form-item ui-border-b">
+                <label>卡号</label>
+                <input type="tel" placeholder="输入卡号">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+            <div class="ui-form-item ui-border-b">
+                <label>持卡人姓名</label>
+                <input type="password" placeholder="持卡人姓名">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+        </form>
+        <div class="ui-btn-wrap">
+            <button id="save" class="ui-btn-lg ui-btn-primary">确认添加</button>
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="./../../script/api.js"></script>
+<script type="text/javascript" src="./../../frozenui-1.3.0/lib/zepto.min.js"></script>
+<script type="text/javascript" src="./../../script/comment.js"></script>
+<script>
+    apiready = function(){
+        var oInputClose = $api.domAll('.ui-icon-close');
+        var oReturn = $api.dom('.ui-icon-return');
+        var oSave = $api.byId('save');
+        $api.addEvt(oReturn, 'click', function () {
+            close();
+        });
+
+        for(var i=0; i<oInputClose.length; i++) {
+            resetInput(oInputClose[i]);
+        }
+
+        $api.addEvt(oSave, 'click', function () {
+            close();
+        });
+
+        function close () {
+            api.closeFrame({
+                name: 'myadd'
+            });
+        }
+
+
+    }
+</script>
+</html>

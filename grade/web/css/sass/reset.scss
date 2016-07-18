@@ -1,0 +1,81 @@
+body,h1,h2,h3,h4,p{
+	margin: 0;
+	padding: 0;
+}
+
+input {
+	outline: none;
+	border: none;
+	padding: 0;
+	background: none;
+}
+
+a,a:hover,a:link,a:visited,a:visited {
+	text-decoration: none;
+	color: #fff;
+}
+
+@mixin borderBox {
+	box-sizing: border-box;
+}
+
+ul {
+	padding: 0;	
+	margin: 0;
+}
+
+li {
+	list-style: none;
+}
+
+
+@font-face {font-family: 'iconfont';
+    src: url('../../common/ux_1466967219_6081846/iconfont.eot'); /* IE9*/
+    src: url('../../common/ux_1466967219_6081846/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../../common/ux_1466967219_6081846/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../../common/ux_1466967219_6081846/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../../common/ux_1466967219_6081846/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin fl {
+	float:left;
+}
+
+@mixin fr {
+	float:right;
+}
+
+@mixin clear {
+	&::after {
+		content: "";
+		height: 0;
+		display: block;
+		visibility: hidden;
+		clear: both;
+	}
+}
+
+@mixin usebrowser ($attr,$value){
+	-webkit-#{$attr}: $value;
+	-moz-#{$attr}: $value;
+	-ms-#{$attr}: $value;
+	#{$attr}: $value;
+}
+
+
+@mixin center {
+	position: absolute;
+	left: 50%;
+	right: 50%;
+
+	@include usebrowser(transform,translate(-50%,50%));
+}

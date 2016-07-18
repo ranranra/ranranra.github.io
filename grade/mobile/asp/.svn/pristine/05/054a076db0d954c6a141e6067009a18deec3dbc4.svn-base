@@ -1,0 +1,53 @@
+/**
+ * [comment]
+ * @Author   changshuangYu
+ * @DateTime 2016-03-8T11:45:18+0800
+ */
+
+//添加首页ifame
+function indexOpenCommon (name,title){
+    api.openWin({
+        name: name,
+        url: './'+name+'.html',
+        pageParam: {
+            name: name,
+            title: title
+        },
+        rect: {
+            x: 0,
+            y: 0,
+            w: 'auto',
+            h: 'auto'
+        }
+    });
+}
+
+//重置input
+function resetInput (obj) {
+    var oInput = $api.prev(obj);
+    $api.addEvt(obj, 'click', function () {
+        $api.val(oInput, '');
+    });
+}
+
+//切换frame
+function changeFrame(obj) {
+    if( tag == $api.dom('#footer li.active') )return;
+    var eFootLis = $api.domAll('#footer li'),
+        eHeaderLis = $api.domAll('header li'),
+        index = 0;
+    for (var i = 0,len = eFootLis.length; i < len; i++) {
+        if( tag == eFootLis[i] ){
+            index = i;
+        }else{
+            $api.removeCls(eFootLis[i], 'active');
+            $api.removeCls(eHeaderLis[i], 'active');
+        }
+    }
+    $api.addCls( eFootLis[index], 'active');
+    $api.addCls( eHeaderLis[index], 'active');
+    api.setFrameGroupIndex({
+        name: 'group',
+        index: index
+    });
+}

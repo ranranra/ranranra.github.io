@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>我的评价</title>
+    <link rel="stylesheet" type="text/css" href="./../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../frozenui-1.3.0/css/frozen.css"/>
+    <style type="text/css">
+    .ui-list>li {
+        margin-left: 10px;
+    }
+    .ui-list {
+        background: #f5f5f5;
+    }
+    .top {
+        background: #f5f5f5;
+    }
+    .wyt-tab {
+        width: 70%;
+        margin: 10px;
+        border: 1px solid #cacccd;
+        border-radius: 3px;
+        text-align: center;
+        background: #fff;
+        padding: 2px 0;
+    }
+    .wyt-evalue {
+       border: 1px solid #ddd;
+       margin: 10px;
+       background: #fff;
+       position: relative;
+       padding-bottom: 30px;
+    }
+    .wyt-evalue .info {
+        font-size: 12px;
+    }
+    .content .user{
+        font-size: 14px;
+    }
+    .content .user strong {
+        font-weight: normal;
+    }
+    .content .star {
+        float: right;
+        margin-top: 5px;
+    }
+    .content .star li{
+        float: right;
+        height: 12px;
+        width: 12px;
+        border-radius: 50%;
+        background: orange;
+        margin-right: 5px;
+    }
+    .content p {
+        font-size: 12px;
+        color: #000;
+    }
+    .content p.info {
+        color: #777;
+    }
+    .content time {
+        font-size: 12px;
+    }
+    .control {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 30px;
+        width: 90%;
+        padding: 0 10px;
+    }
+    .control p {
+        float:left;
+    }
+    .control ul {
+        float: right;
+    }
+    .control ul li {
+        float: right;
+    }
+    </style>
+</head>
+<body>
+	<header class="ui-border-b">
+         <span class="ui-icon-return"></span>
+         <h1>我的评价</h1>
+    </header>
+    <section>
+        <div class="ui-flex ui-flex-pack-center top">
+            <div class="ui-row ui-whitespace wyt-tab">
+                最近一个月
+            </div>
+        </div>
+        <ul class="ui-list list-evalue">
+            <li class="wyt-evalue">
+                <div class="ui-list-thumb-s">
+                    <span style="background-image:url(http://placeholder.qiniudn.com/100x100)"></span>
+                </div>
+                <div class="ui-list-info">
+                    <div class="content">
+                        <div class="user clearfix">
+                            <strong>冬天的前阵子</strong>
+                            <ul class="star">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span>4.0</span>
+                        </div>
+                        <p>评价:<span>哈尔滨物流</span></p>
+                        <p class="info">总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,</p>
+                        <time>2015-12-30&nbsp14:21:35</time>
+                    </div>
+                    <div class="control clearfix">
+                        <p>运单：<span>152256547878</span></p>
+                        <ul>
+                            <li>
+                                <span></span>
+                                <a href="javascript:;">修改</a>
+                            </li>
+                            <li>
+                                <span></span>
+                                <a href="javascript:;">撤销</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </li>
+            <li class="wyt-evalue">
+                <div class="ui-list-thumb-s">
+                    <span style="background-image:url(http://placeholder.qiniudn.com/100x100)"></span>
+                </div>
+                <div class="ui-list-info">
+                    <h4 class="ui-nowrap"></h4>
+                    <div class="ui-txt-info">4.0</div>
+                </div>
+            </li>
+        </ul>
+    </section>
+</body>
+    <script type="text/javascript" src="./../../script/api.js"></script>
+    <script type="text/javascript" src="./../../frozenui-1.3.0/lib/zepto.min.js"></script>
+    <script type="text/javascript" src="./../../script/comment.js"></script>
+</html>

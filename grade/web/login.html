@@ -1,0 +1,57 @@
+<!-- 
+/*
+ *@author:杨亚洲
+ *@version:v1.0
+ *@date:2016/6/24
+*/ 
+ -->
+
+ 
+
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			杨亚洲 - 绩点查询系统
+		</title>
+		<link rel="stylesheet" href="css/login.css">
+	</head>
+	<body>
+		<script language="javascript">
+			function checkForm(frm){
+				if(frm.username.value==""){
+					alert("请输入用户名");
+					return false;
+				}
+				if(frm.pwd.value==""){
+					alert("请输入密码");
+					return false;
+				}
+				return true;
+			}
+		</script>
+		
+		<section id="warp">
+			<form method="post" action="?op=regist" name="myForm" onsubmit="return CheckMe();">
+				<h1>LOGIN</h1>
+				<div class="bot"><input type="text" name="username" placeholder="请输入用户名"></div>
+				<div class="bot"><input type="password" name="password" placeholder="请输入密码"></div>
+				<a href="indexMain.html"><div class="bot bot-submit"><input type="submit" name="">ENTER</div></a>
+				<div class="bottom"> 
+					<span class="left">忘记密码</span>
+					<a href="./register.html"><span class="right">注册</span></a>
+				</div>
+				
+			</form>
+		</section>
+
+		<footer>
+			<span>
+			杨亚洲&nbsp;&nbsp;&nbsp;20144472<br/>
+			本绩点查询系统&nbsp;v1.0&nbsp;由杨亚洲独立开发，如需借鉴请注明出处</span>
+		</footer>
+	</body>
+</html>
+

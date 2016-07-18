@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <title>绩点查询系统-杨亚洲</title>
+        
+        <link rel="stylesheet" href="frozenui-1.3.0/css/frozen.css">
+        <!-- <link rel="stylesheet" href="demo.css"> -->
+        <!-- <script src="../lib/zepto.min.js"></script> -->
+        <!-- <script src="frozenui-1.3.0/js/frozen.js"></script> -->
+        <style>
+        input {
+            outline: none;
+            border: 0;
+        }
+
+        .content{
+            margin-top: 20px;
+        }
+        
+        .content .ui-row-flex{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .content .header div{
+            background: #18b4ed;
+            color: #fff;
+            
+        }
+
+        .content .main div{
+            
+            padding: 5px 0 5px 5%;
+            background: #fff;
+        }
+        .ui-col-25 {
+            
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            overflow: hidden;
+            
+           
+            text-align: center;
+        }
+
+        .content .bottom div{
+            margin-top: 8px;
+            background: #f74c31;
+            color: #fff;
+        }
+
+        .ui-justify li{
+            background:#ccc;
+        }
+        </style>
+    </head>
+    
+    <body ontouchstart>
+        <header class="ui-header ui-header-positive ui-border-b">
+            <!-- <i class="ui-icon-return" ></i> -->
+            <h1>绩点查询 — 杨亚洲</h1>
+            <button class="ui-btn clear-value">清空</button>
+        </header>
+       
+        <section class="ui-container content">
+            <div class="ui-row-flex ui-whitespace ui-justify-flex header">
+                <div class="ui-col ui-col-25 ui-whitespace">科目</div>
+                <div class="ui-col ui-col-25 ui-whitespace">成绩</div>
+                <div class="ui-col ui-col-25 ui-whitespace">学分</div>
+            </div>
+            <div id="content-main">
+                <div class="ui-row-flex ui-whitespace ui-justify-flex main">
+                    <div class="ui-col ui-col-25 "><input type="text" placeholder="填补科目" ></div>
+                    <div class="ui-col ui-col-25 "><input type="number"  placeholder="输入分数" ></div>
+                    <div class="ui-col ui-col-25 "><input type="number"  placeholder="输入学分"></div>
+                </div>
+
+                <div class="ui-row-flex ui-whitespace ui-justify-flex main">
+                    <div class="ui-col ui-col-25 "><input type="text" placeholder="填补科目" ></div>
+                    <div class="ui-col ui-col-25 "><input type="number"  placeholder="输入分数" ></div>
+                    <div class="ui-col ui-col-25 "><input type="number"  placeholder="输入学分"></div>
+                </div>
+
+                <div class="ui-row-flex ui-whitespace ui-justify-flex main">
+                    <div class="ui-col ui-col-25 "><input type="text" placeholder="填补科目" ></div>
+                    <div class="ui-col ui-col-25 "><input type="number"  placeholder="输入分数" ></div>
+                    <div class="ui-col ui-col-25 "><input type="number"  placeholder="输入学分"></div>
+                </div>
+
+                <div class="ui-row-flex ui-whitespace ui-justify-flex main">
+                    <div class="ui-col ui-col-25 "><input type="text" placeholder="填补科目" ></div>
+                    <div class="ui-col ui-col-25 "><input type="number"  placeholder="输入分数" ></div>
+                    <div class="ui-col ui-col-25 "><input type="number"  placeholder="输入学分"></div>
+                </div>
+            </div>
+           
+            <div class="ui-row-flex ui-whitespace ui-justify-flex bottom">
+                <div class="ui-col ui-col-25 ui-whitespace add">添加</div>
+                <div class="ui-col ui-col-25 ui-whitespace cacle">计算</div>
+            </div>
+
+        </section><!-- /.ui-container-->
+        <script>
+        window.onload = function() {
+            var oClear = document.querySelector(".clear-value");
+            var oAdd = document.querySelector(".add");
+            var oCacle = document.querySelector(".cacle");
+            var oMain = null;
+
+            oClear.addEventListener("touchstart",clearWeb,false);
+            oAdd.addEventListener("touchstart",createMain,false);
+            oCacle.addEventListener("touchstart",function() {
+                oMain = document.querySelectorAll(".main");
+                cacleInput(oMain);
+            },false);
+
+
+        };
+
+        function cacleInput (objArr) {
+            var sumGrade = 0;
+            var sumCredit = 0;
+
+            for(var i = 0; i<objArr.length; i++) {
+
+                var aInput = objArr[i].querySelectorAll("input");
+                objArr[i].grade =  Number(aInput[1].value);
+                objArr[i].credit = Number(aInput[2].value);
+                
+                 
+                if( isNaN(objArr[i].grade) || isNaN(objArr[i].credit) ) {
+                    objArr[i].onOff = false;
+                    alert(false);
+                }else{
+                    
+                    objArr[i].onOff = true;
+                   
+                }
+            }  
+
+
+            for(var j = 0; j<objArr.length; j++){
+                if(objArr[j].onOff){
+                    sumCredit += objArr[j].credit;
+                    sumGrade += objArr[j].grade*objArr[j].credit;
+                }
+            }
+
+            alert("您的学分积点为:"+sumGrade/sumCredit/10);
+        }
+
+        function clearWeb () {
+            window.location.href = "http://allenyang.cn/mobile/asp/index.html";
+        }
+
+        function createMain (){
+            var content = document.getElementById("content-main");
+            
+           content.innerHTML += '<div class="ui-row-flex ui-whitespace ui-justify-flex main"><div class="ui-col ui-col-25 "><input type="text" placeholder="填补科目" ></div><div class="ui-col ui-col-25 "><input type="number"  placeholder="输入分数" ></div><div class="ui-col ui-col-25 "><input type="number"  placeholder="输入学分"></div></div>';
+        }
+
+        </script>
+    </body>
+</html>

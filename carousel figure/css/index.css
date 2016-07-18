@@ -1,0 +1,101 @@
+@charset"UTF-8";
+
+/*
+    reset
+*/
+ul{
+    margin:0;
+    padding:0;
+}
+
+li{
+    list-style: none;
+}
+body,div,p{
+    margin:0;
+    padding:0;
+}
+html,body{
+    margin:0;
+    height:100%;
+}
+
+/*
+    public
+*/
+
+.fr{
+    float: right;
+}
+
+.fl{
+    float: left;
+}
+*{
+    box-sizing: border-box;
+}
+
+/*
+    layout
+*/
+#menu {
+    position: fixed;
+    left: 10px;
+    right: 10px;
+    z-index: 10;
+}
+
+#menu li{
+    margin: 0 10px 0;
+    font-size: 14px;
+}
+
+#menu li a{
+    display: inline-block;
+    padding:10px 20px;
+    background-color:#fff;
+    color:#333;
+    text-decoration:none;
+}
+
+
+#menu .active a{
+    color:#fff;
+    background-color:#333;
+}
+
+#lunbo{
+    height:100%;
+}
+#lunbo .statement{
+    position: absolute;
+    bottom:30px;
+    right:50px;
+}
+.section{
+    position: relative;
+    width:100%;
+    height:100%;
+}
+.section1{
+    background: url(../img/head_bac.jpg);
+    background-size: cover;
+} 
+
+.section1 .content{
+    min-height:100%;
+    background-color:  rgba(0, 0, 0, 0.35);
+}
+
+.section2{
+    background: url(../img/bg2.jpg);
+    background-size: cover;
+}
+.section3{
+    background: url(../img/bg3.jpg);
+    background-size: cover;
+}
+.section4{
+    background: url(../img/winter-back.jpg);
+    background-size: cover;
+}

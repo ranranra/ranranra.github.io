@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../frozenui-1.3.0/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <style>
+        .ui-container .ui-form {
+        	margin-top: 20px;
+        	margin-bottom: 10px;
+        }
+        .ui-form-item {
+        	position: relative;
+        }
+        .ui-form-item-radio p {
+        	font-size: 12px;
+        }
+        #getcode {
+        	position: absolute;
+        	right: 36px;
+        	top: 50%;
+        }
+    </style>
+
+</head>
+<body>
+	<section class="ui-container">
+		<div class="wyt-desc">
+			<p class="ui-txt-default">欢迎您使用物亿通</p>
+			<p class="ui-txt-info">一站式物流货款解决方案,方便,快捷,安全</p>
+		</div>
+		<div class="ui-form ui-border-t">
+		    <form action="#">
+			    <div class="ui-form-item ui-border-b">
+			        <label>手机号</label>
+			        <input type="text" placeholder="手机号">
+			        <a href="javascript:;" class="ui-icon-close">
+			        </a>
+			    </div>
+			    <div class="ui-form-item ui-border-b">
+			        <label>验证码</label>
+			        <input type="text" placeholder="验证码">
+			        <a href="javascript:;" class="ui-icon-close">
+			        </a>
+					<button id="getcode" class="ui-btn ui-btn-primary">获取验证码</button>
+			    </div>
+			    <div class="ui-form-item ui-border-b">
+			        <label>密码</label>
+			        <input type="text" placeholder="密码">
+			        <a href="javascript:;" class="ui-icon-close">
+			        </a>
+			    </div>
+			    <div class="ui-form-item ui-border-b">
+			        <label>确认密码</label>
+			        <input type="text" placeholder="确认密码">
+			        <a href="javascript:;" class="ui-icon-close">
+			        </a>
+			    </div>
+				<div class="ui-form-item ui-form-item-radio ui-border-b">
+				    <label class="ui-radio" for="radio">
+				        <input type="radio" name="radio">
+				    </label>
+				    <p>我同意物亿通用户协议</p>
+				</div>
+		    </form>
+		</div>
+		<div class="ui-btn-wrap">
+		    <button id="sub" class="ui-btn-lg ui-btn-primary">提交注册</button>
+		</div>
+		<div class="ui-btn-wrap">
+			<button id="go" class="ui-btn-lg">已有账号,去登录</button>
+		</div>
+	</section>
+</body>
+<script src="../script/api.js"></script>
+<script src="../frozenui-1.3.0/lib/zepto.min.js"></script>
+<script type="text/javascript">
+	    var oGetCode = $('#getcode');
+	    var oGo = $api.byId('go');
+	    var oClose = $api.byId('close');
+
+	    var oH = oGetCode.height();
+	    oGetCode.css('marginTop',-oH/2); 
+</script>
+</html>

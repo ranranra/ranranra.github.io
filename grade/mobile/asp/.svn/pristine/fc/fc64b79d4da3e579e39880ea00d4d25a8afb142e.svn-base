@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>找回密码</title>
+    <link rel="stylesheet" type="text/css" href="../frozenui-1.3.0/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <style>
+	    .ui-form-item {
+	    	position: relative;
+	    }
+        #getcode {
+        	position: absolute;
+        	right: 36px;
+        	top: 50%;
+        }
+    </style>
+
+</head>
+<body>
+    <header class="ui-border-b">
+    	<h1>找回密码</h1>
+    	<i id="close" class="ui-icon-close-page"></i>
+    </header>
+    <section class="ui-container">
+    	<div class="ui-form ui-border-t">
+    	    <form action="#">
+    		    <div class="ui-form-item ui-border-b">
+    		        <label>手机号</label>
+    		        <input type="text" placeholder="手机号">
+    		        <a href="javascript:;" class="ui-icon-close">
+    		        </a>
+    		    </div>
+    		    <div class="ui-form-item ui-border-b">
+    		        <label>验证码</label>
+    		        <input type="text" placeholder="验证码">
+    		        <a href="javascript:;" class="ui-icon-close">
+    		        </a>
+    				<button id="getcode" class="ui-btn ui-btn-primary">获取验证码</button>
+    		    </div>
+    		    <div class="ui-form-item ui-border-b">
+    		        <label>真实姓名</label>
+    		        <input type="text" placeholder="请填写您个人资料中的真实姓名">
+    		        <a href="javascript:;" class="ui-icon-close">
+    		        </a>
+    		    </div>
+    	    </form>
+    	</div>
+    	<div class="ui-btn-wrap">
+    	    <button id="sub" class="ui-btn-lg ui-btn-primary">申请重置</button>
+    	</div>
+    	<div class="ui-btn-wrap">
+    		<button id="go" class="ui-btn-lg">返回登录</button>
+    	</div>
+    </section>
+</body>
+<script src="../script/api.js"></script>
+<script src="../frozenui-1.3.0/lib/zepto.min.js"></script>
+<script type="text/javascript" src="../script/comment.js"></script>
+<script>
+    apiready = function(){
+        var oGetCode = $('#getcode');
+        var oGo = $api.byId('go');
+        var oSub = $api.byId('sub');
+        var oClose = $api.byId('close');
+        var oInputClose = $api.domAll('.ui-icon-close');
+        var arr1 = ["login","reg","find","reset"];
+        var arr2 = ["用户登录","用户注册","找回密码","重置密码"];
+
+        $api.fixStatusBar( $api.dom('header') );
+
+        var oH = oGetCode.height();
+        oGetCode.css('marginTop',-oH/2); 
+        $api.addEvt(oGo, 'click', function () {
+            api.closeWin({
+                name: 'find'
+            });
+        });
+        $api.addEvt(oSub, 'click', function () {
+            indexOpenCommon(arr1[3],arr2[3]);
+        });
+        $api.addEvt(oClose, 'click', function () {
+            api.closeWin({
+                name: 'find'
+            });
+        });
+        
+        for(var i=0; i<oInputClose.length; i++) {
+            resetInput(oInputClose[i]);
+        }    
+    }
+
+
+</script>
+</html>

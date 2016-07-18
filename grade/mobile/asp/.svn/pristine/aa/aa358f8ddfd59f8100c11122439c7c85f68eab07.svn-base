@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>通知公告</title>
+    <link rel="stylesheet" type="text/css" href="./../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../frozenui-1.3.0/css/frozen.css"/>
+    <style>
+        .top {
+            padding: 20px 0;
+        }
+        .top .ui-btn-wrap {
+            margin-top: 10px;
+        }
+        .ui-form-item {
+            padding-left: 15px;
+        }
+
+        .ui-icon-unfold {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            line-height: 22px;
+        }
+        .hide {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+   <header class="ui-border-b">
+        <span class="ui-icon-return"></span>
+        <h1>通知公告</h1>
+    </header>
+    <section>
+        <ul class="ui-row ui-whitespace">
+            <li class="wyt-notice">
+                <div class="wyt-title">
+                    <h4>物亿通充值赠礼活动</h4>
+                    <span class="ui-icon-unfold"></span>
+                </div>
+                <div>
+                    <time>2015-12-30&nbsp14:21:35</time>
+                    <p class="info">总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了</p>
+                </div>
+            </li>
+            <li class="wyt-notice">
+                <div class="wyt-title">
+                    <h4>物亿通充值赠礼活动</h4>
+                    <span class="ui-icon-unfold"></span>
+                </div>
+                <div>
+                    <time>2015-12-30&nbsp14:21:35</time>
+                    <p class="info">总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了</p>
+                </div>
+            </li>
+            <li class="wyt-notice">
+                <div class="wyt-title">
+                    <h4>物亿通充值赠礼活动</h4>
+                    <span class="ui-icon-unfold"></span>
+                </div>
+                <div>
+                    <time>2015-12-30&nbsp14:21:35</time>
+                    <p class="info">总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了,总体不错,要是运费再便宜点就好了</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+</body>
+<script type="text/javascript" src="./../../script/api.js"></script>
+<script type="text/javascript" src="./../../frozenui-1.3.0/lib/zepto.min.js"></script>
+<script type="text/javascript" src="./../../script/comment.js"></script>
+<script type="text/javascript">
+    apiready = function(){
+        var oDetail = $api.domAll('.ui-icon-unfold');
+        var oInputClose = $api.domAll('.ui-icon-close');
+        var oReturn = $api.dom('.ui-icon-return');
+        var oP = $api.domAll('.info');
+        $api.addEvt(oReturn, 'click', function () {
+            close();
+        });
+        for (var i=0;i<oDetail.length;i++) {
+            oDetail[i].index = i;
+            $api.addEvt(oDetail[i], 'click', function () {
+                $api.toggleCls(oP[this.index], 'hide');
+            });
+        }
+        $api.addEvt(oReturn, 'click', function () {
+            close();
+        });
+
+        for(var i=0; i<oInputClose.length; i++) {
+            resetInput(oInputClose[i]);
+        }
+
+        function close () {
+            api.closeFrame({
+                name: 'mynotice'
+            });
+        }
+
+    }
+</script>
+</html>

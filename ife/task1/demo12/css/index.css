@@ -1,0 +1,187 @@
+/***********************************************\
+
+    @author:    杨亚洲;
+    @github:    github.com/allenyangfly;
+    @mail：      allenyang1995@outlook.com;
+    @qq:        827883530;
+
+\************************************************/
+
+@charset"UTF-8";
+
+
+/*
+    reset
+*/
+table{
+    /*no space*/
+    border-collapse:collapse;
+}
+ul,ol{
+    padding:0;
+    margin:0;
+}
+li{
+    list-style: none;
+}
+
+/*
+    layout
+*/
+
+#top-table{
+    margin-bottom: 100px;
+}
+
+#top-table td,th{
+    border:2px solid #fff;
+}
+
+#top-table th{
+    color:#fff;
+    background: #000;
+    font-weight:normal;
+}
+
+#top-table tbody tr:nth-of-type(even){
+    background: #ccc;
+}
+
+
+#top-table tbody tr:nth-of-type(n){
+    color:red;    
+}
+
+#top-table tbody tr:nth-of-type(n+4){
+    color:#000;
+}
+
+#content-inp{
+    color:#ccc;
+    transition: 1.5s;
+    width:150px;
+    border:1px solid #c0c0c0;
+    margin-bottom: 100px;
+}
+
+#content-inp:focus{
+    color:#000;
+    width:300px;
+    box-shadow: 0px 0px 10px #000;
+}
+
+
+.banner{
+    position: relative;
+    width:400px;
+    height:200px;
+    margin-bottom: 100px;
+    overflow: hidden;
+}
+
+.banner .banner-img{
+    width:100%;
+    height:100%;
+    position: relative;
+    /*left:-100%;*/
+}
+
+.banner .banner-img li{
+    width:100%;
+    height:100%;
+    position: absolute;
+    transition: 2s;
+}
+
+.banner .banner-img li:nth-of-type(1){
+    background: #e74f4d;
+}
+.banner .banner-img li:nth-of-type(2){
+    background: #3060aa;
+}
+.banner .banner-img li:nth-of-type(3){
+    background: #37acee;
+}
+
+@keyframes move{
+    0% { 
+        left:-100%; 
+    }
+    100% { 
+        left:0%;
+
+    }
+}
+
+.banner .banner-btn{
+    position: absolute;
+    bottom:0px;
+    right:0px;
+}
+
+#tab1{
+    z-index: 2;
+}
+
+.banner .banner-btn li{
+    width:30px;
+    height:30px;
+    background: rgba(256,256,256,0.5);
+    float: left;
+    margin-left: 1px;
+    line-height: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+.banner .banner-btn li a{
+    display: block;
+    width:100%;
+    height:100%;
+    text-decoration: none;
+}
+
+.banner-show{
+    background-color: #e74f4d;
+}
+
+#tab1:target ~ .banner-show{
+    z-index :0;
+}
+
+li:target ~ .banner-show{
+    z-index :-1;
+}
+
+
+
+li:target{
+    z-index: 4;
+    animation:move 1s linear;
+}
+
+.bottom-banner .banner-img li:nth-of-type(1){
+    background: url(../img/bg1.jpg);
+    background-size: cover;
+}
+.bottom-banner .banner-img li:nth-of-type(2){
+    background: url(../img/bg2.jpg);
+    background-size: cover;
+}
+.bottom-banner .banner-img li:nth-of-type(3){
+    background: url(../img/bg3.jpg);
+    background-size: cover;
+}
+
+
+.bottom-banner-show{
+    background: url(../img/bg1.jpg);
+}
+
+#tab4:target ~ .bottom-banner-show{
+    z-index :0;
+}
+
+li:target ~ .bottom-banner-show{
+    z-index :-1;
+}

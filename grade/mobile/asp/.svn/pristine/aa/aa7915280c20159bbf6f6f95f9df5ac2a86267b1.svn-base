@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>新建运单</title>
+    <link rel="stylesheet" type="text/css" href="./../../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../css/style.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../frozenui-1.3.0/css/frozen.css"/>
+    <link rel="stylesheet" type="text/css" href="./../../font/iconfont/iconfont.css">
+    <style>
+        .ui-icon-return {
+            position: absolute;
+            left: 10px;
+            bottom: 3px;
+            color: #fff;
+        }
+        .top {
+            padding: 20px 0;
+        }
+        .top .ui-btn-wrap {
+            margin-top: 10px;
+        }
+        .ui-form-item {
+            padding-left: 15px;
+        }
+        .addnew {
+            text-align: right;
+            font-size: 12px;
+            padding-right: 10px;
+            line-height: 24px;
+        } 
+    </style>
+</head>
+<body>
+    <header class="ui-border-b">
+        <span class="ui-icon-return"></span>
+        <h1>新建运单</h1>
+    </header>
+    <section>
+        <div class="wyt-block">
+            <div class="ui-border-b wyt-title">
+                <h5>收货人信息</h5>
+            </div>
+            <div class="ui-form-item ui-border-b">
+                <label>收货人</label>
+                <input type="text" placeholder="在联系人中选择">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+            <p class="addnew"><a>去添加新的联系人</a><i class="iconfont icon-unie620"></i></p>
+            <div class="ui-border-b wyt-title">
+                <h5>货物信息及发往地</h5>
+            </div>
+            <div class="ui-form-item ui-border-b">
+                <label>货物名称</label>
+                <input type="text" placeholder="货物名称">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+            <div class="ui-form-item ui-border-b">
+                <label>货物件数</label>
+                <input type="text" placeholder="货物件数：24">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+            <div class="ui-form-item ui-border-b">
+                <label>发往地</label>
+                <input type="text" placeholder="发往地城市">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+            <div class="ui-border-b wyt-title">
+                <h5>选择承运物流</h5>
+            </div>
+            <div class="ui-form-item ui-border-b">
+                <label>物流公司</label>
+                <input type="text" placeholder="物流公司">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+            <div class="ui-border-b wyt-title">
+                <h5>货物价格</h5>
+            </div>
+            <div class="ui-form-item ui-border-b">
+                <label>货物价格</label>
+                <input type="text" placeholder="货物价格">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+            <div class="ui-form-item ui-border-b">
+                <label>保价金额</label>
+                <input type="text" placeholder="保价金额">
+                <a href="javascript:;" class="ui-icon-close">
+                </a>
+            </div>
+        </div>
+
+        <div class="ui-btn-wrap">
+            <button id="see" class="ui-btn-lg ui-btn-primary">预览运单</button>
+        </div>
+    </section>
+</body>
+<script type="text/javascript" src="./../../script/api.js"></script>
+<script type="text/javascript" src="./../../frozenui-1.3.0/lib/zepto.min.js"></script>
+<script type="text/javascript" src="./../../script/comment.js"></script>
+<script>
+    apiready = function(){
+        var oSee = $api.byId('see');
+        var oInputClose = $api.domAll('.ui-icon-close');
+        var oReturn = $api.dom('.ui-icon-return');
+        $api.addEvt(oReturn, 'click', function () {
+            close();
+        });
+        $api.addEvt(oSee, 'click', function () {
+            api.openFrame({
+                name: 'viewbill',
+                url: './viewbill.html',
+                bounces: false,
+                rect: {
+                    x: 0,
+                    y: 0,
+                    w: 'auto',
+                    h: 'auto',
+                    marginBottom: 56
+                }
+            });
+        });
+
+        for(var i=0; i<oInputClose.length; i++) {
+            resetInput(oInputClose[i]);
+        }
+
+        function close () {
+            api.closeFrame({
+                name: 'newbill'
+            });
+        }
+
+    }
+        
+</script>
+</html>

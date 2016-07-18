@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <title>重置密码</title>
+    <link rel="stylesheet" type="text/css" href="../frozenui-1.3.0/css/frozen.css">
+    <link rel="stylesheet" type="text/css" href="../css/api.css"/>
+    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <style>
+	    .ui-form-item {
+	    	position: relative;
+	    }
+        #getcode {
+        	position: absolute;
+        	right: 36px;
+        	top: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header class="ui-header ui-header-positive ui-border-b">
+    	<h1>重置密码</h1>
+    	<i id="close" class="ui-icon-close-page"></i>
+    </header>
+    <section class="ui-container">
+    	<div class="ui-form ui-border-t">
+    	    <form action="#">
+    		    <div class="ui-form-item ui-border-b">
+    		        <label>新密码</label>
+    		        <input type="text" placeholder="新密码">
+    		        <a href="javascript:;" class="ui-icon-close">
+    		        </a>
+    		    </div>
+    		    <div class="ui-form-item ui-border-b">
+    		        <label>确认新密码</label>
+    		        <input type="text" placeholder="确认新密码">
+    		        <a href="javascript:;" class="ui-icon-close">
+    		        </a>
+    		    </div>
+    	    </form>
+    	</div>
+    	<div class="ui-btn-wrap">
+    	    <button id="sub" class="ui-btn-lg ui-btn-primary">提交修改</button>
+    	</div>
+    </section>
+</body>
+<script src="../script/api.js"></script>
+<script src="../frozenui-1.3.0/lib/zepto.min.js"></script>
+<script>
+    var oGetCode = $('#getcode');
+    var oGo = $api.byId('go');
+    var oSub = $api.byId('sub');
+    var oClose = $api.byId('close');
+
+    var oH = oGetCode.height();
+    oGetCode.css('marginTop',-oH/2); 
+    $api.addEvt(oSub, 'click', function () {
+        window.location = 'login.html';
+    });
+    $api.addEvt(oClose, 'click', function () {
+        window.location = "find.html";
+    });
+</script>
+</html>
