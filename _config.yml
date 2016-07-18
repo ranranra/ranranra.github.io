@@ -87,7 +87,7 @@ author:
   weibo: 5738740087     ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier: 5738740087 ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   #tsina: 9d4bc461     ## e.g. 2176287895  Your weibo ID,It will be used in share button.
-  douban: 148491504    ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
+  #douban: 148491504    ## e.g. wuchong1014 or your id for https://www.douban.com/people/wuchong1014
   zhihu: ranranra     ## e.g. jark  for http://www.zhihu.com/people/jark
   email: 861513646@qq.com     ## e.g. imjark@gmail.com
   #twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
@@ -107,7 +107,7 @@ toc:
 
 #### Links
 links:
-  tcOops's Blog: http://spacenx.pw/
+  XGJD's blog: http://xgcyjd.com
 
 excerpt_separator: <!--more-->
 
