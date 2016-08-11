@@ -16,7 +16,7 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: rouge
 
-assets: http://ranranra.github.io/assets
+assets: https://ranranra.github.io/assets
 #baseurl: http://ranranra.github.io
 
 # pagination
