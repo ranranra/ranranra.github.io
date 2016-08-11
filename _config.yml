@@ -3,7 +3,7 @@ title: Ranranra
 email: 861513646@qq.com 
 description: Hey,我是ranranra.
 localurl: "" # the subpath of your site, e.g. /blog/
-url: https://ranranra.github.io # the base hostname & protocol for your site
+url: http://ranranra.github.io # the base hostname & protocol for your site
 me-img: "/img/HeadPicture.png"
 
 twitter_username:
@@ -16,7 +16,7 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 highlighter: rouge
 
-assets: https://ranranra.github.io/assets
+assets: http://ranranra.github.io/assets
 #baseurl: http://ranranra.github.io
 
 # pagination
