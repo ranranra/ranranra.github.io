@@ -2,8 +2,8 @@
 title: Ranranra
 email: 861513646@qq.com 
 description: Hey,我是ranranra.
-localurl: "https://ranranra.github.io" # the subpath of your site, e.g. /blog/
-url: https://ranranra.github.io # the base hostname & protocol for your site
+localurl: "http://ranranra.github.io" # the subpath of your site, e.g. /blog/
+url: http://ranranra.github.io # the base hostname & protocol for your site
 me-img: "/img/HeadPicture.png"
 
 twitter_username:
