@@ -1,13 +1,13 @@
 ---
-published:true
-layout:post
-title:javascript面向对象
-category:前端
+published: true
+layout: post
+title: javascript面向对象
+category: 前端
 tags:
-  -前端
-  -面向对象
-time:2016.08.22 18:00:00
-excerpt:面向对象是一种思想。世间万物皆对象。
+  - 前端
+  - 面向对象
+time: 2016.08.22 18:00:00
+excerpt: 面向对象是一种思想。世间万物皆对象。
 ---
 面向对象是一种思想。世间万物皆对象。
 
