@@ -8,9 +8,7 @@ tags:
   - 前端
   - 交互处理
 time：2016.08.18 14:00:00
-excerpt:AJAX即Asynchronous Javascript and XML，异步javascript和xml</br>
-优势：节省用户操作时间，提高用户体验，减少数据请求</br>
-用途：传输获取数据
+excerpt:AJAX即Asynchronous Javascript and XML，异步javascript和xml</br>优势：节省用户操作时间，提高用户体验，减少数据请求</br>用途：传输获取数据
 
 ---
 

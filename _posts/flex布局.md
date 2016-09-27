@@ -5,8 +5,8 @@ layout:post
 title:flex布局
 category:前端
 tags:
-	-前端
-	-布局
+  -前端
+  -布局
 time:2016.09.1 12:00:00
 excerpt:Flex是Flexible Box的缩写，意思是“弹性布局”。任何一个容器都可以指定为Flex布局。不论是块状元素还是行内元素。
 
