@@ -599,8 +599,8 @@ header nav ul li a:hover {
 
 @media only screen and (min-width: 1024px) {
     #main {
-        margin: 2em 0 0;
-        width: 75%;
+        margin: 0 auto;
+        width: 85%;
         float: left;
         -webkit-transition: margin 0.5s ease-out;
         -moz-transition: margin 0.5s ease-out;
