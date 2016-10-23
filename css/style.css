@@ -1816,8 +1816,8 @@ section.comment {
     #asidepart {
         position: relative;
         float: left;
-        width: 17%;
-        margin: 2em 0 0 10px;
+        width: 18%;
+        margin: 2em 0 0 3%
     }
 }
 
