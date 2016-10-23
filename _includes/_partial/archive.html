@@ -3,6 +3,7 @@
 var title = '';
 var icon = '';
 if (page.archive){
+  title = page.archive;
   icon = 'archive';
   if (page.year) title = page.year+  (page.month ? '/' + page.month : '');
   else title = __('archive_a');
