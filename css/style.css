@@ -572,7 +572,6 @@ header nav ul li a:hover {
     width: 95%;
     margin: 0 auto;
     overflow: hidden;
-    position: relative;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1815,11 +1814,10 @@ section.comment {
 
 @media only screen and (min-width: 1024px) {
     #asidepart {
-        position: absolute;
-        top: 30px;
+        position: relative;
         float: left;
-        width: 18.5%;
-        margin: 0;
+        width: 18%;
+        margin: 2em 0 0 3%
     }
 }
 
