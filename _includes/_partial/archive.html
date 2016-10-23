@@ -2,6 +2,11 @@
 <%
 var title = '';
 var icon = '';
+if (page.archive){
+  icon = 'archive';
+  if (page.year) title = page.year+  (page.month ? '/' + page.month : '');
+  else title = __('archive_a');
+};
 if (page.category){
   title = page.category;
   icon = 'category';
@@ -9,11 +14,6 @@ if (page.category){
 if (page.tag){
   title = page.tag;
   icon = 'tag';
-};
-if (page.archive){
-  icon = 'archive';
-  if (page.year) title = page.year+  (page.month ? '/' + page.month : '');
-  else title = __('archive_a');
 };
 %>
 -->
@@ -45,45 +45,46 @@ if (page.archive){
     {% capture next_date_str %}{{ next_date | date: "%Y-%m" }}{% endcapture %}
     {% if this_date_str != next_date_str %}
     <ul class="archive-list">
-    <li class="archive-list-item">
-    <a class="archive-list-link" href="#{{ this_date | date: "%Y-%m" }}">{{ this_date | date: "%Y 年 %m 月" }}</a>
-    <span class="archive-list-count">{{ count }}</span>
-    {% assign count = 1 %}
-    {% else %}
-    {% assign count = count | plus: 1 %}
-    {% endif %}
+      <li class="archive-list-item">
+        <a class="archive-list-link" href="#{{ this_date | date: "%Y-%m" }}">{{ this_date | date: "%Y 年 %m 月" }}</a>
+        <span class="archive-list-count">{{ count }}</span>
+        {% assign count = 1 %}
+        {% else %}
+        {% assign count = count | plus: 1 %}
+        {% endif %}
         
-    </li>
-    {% endfor %}
+      </li>
+      {% endfor %}
     </ul>
- </div>
+  </div>
   {% endif %}
+
   {% if page.type == 'categories' %}
   
   <ul class="archive-list">
-  <div class="archiveslist archive-float clearfix">
+    <div class="archiveslist archive-float clearfix">
     {% for category in site.categories  %}
     <li class="archive-list-item">
     <a class="archive-list-link" href="#{{ category[0] }}">{{ category[0] }}</a>
     <span class="archive-list-count">{{ category[1] | size }}</span>
     </li>
     {% endfor %}
- </div>
- </ul>
+    </div>
+  </ul>
  {% endif %}
  
   {% if page.type == 'tags' %}
   
   <ul class="archive-list">
-  <div class="archiveslist archive-float clearfix">
+    <div class="archiveslist archive-float clearfix">
     {% for tag in site.tags  %}
     <li class="archive-list-item">
     <a class="archive-list-link" href="#{{ tag[0] }}">{{ tag[0] }}</a>
     <span class="archive-list-count">{{ tag[1] | size }}</span>
     </li>
     {% endfor %}
- </div>
- </ul>
+    </div>
+  </ul>
  {% endif %}
  
 </div>
