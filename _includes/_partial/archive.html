@@ -18,7 +18,7 @@ if (page.archive){
 %>
 -->
 
-{% if page.type == 'archive' %}
+{% if page.type == 'archives' %}
 {% assign title = '归档' %}
 {% assign icon = 'archive' %}
 {% endif %}
@@ -35,7 +35,7 @@ if (page.archive){
 
 <div class="archive-title" >
   <h2 class="{{ icon }}-icon"><span class='archive-folder'>{{ title }}</span></h2>
-  {% if page.type == 'archive' %}
+  {% if page.type == 'archives' %}
   <div class="archiveslist archive-float clearfix">
     {% assign count = 1 %}
     {% for post in site.posts  %}
@@ -89,20 +89,20 @@ if (page.archive){
 </div>
 <div id="main" class="archive-part clearfix">
   <div id="archive-page">
-  {% for post in site.posts %}
-  {% assign item = post %}
-  {% assign index = true %}
-  {% include _partial/article_row.html %}
-  {% endfor %}
-<!--
-<% if (page.total > 1){ %>
-  <nav id="page-nav" class="clearfix archive-nav">
-    <%- paginator({
-      prev_text: '<span></span>Prev',
-      next_text: 'Next<span></span>'
-    }) %>
-  </nav>
-<% } %>
--->
+    {% for post in site.posts %}
+    {% assign item = post %}
+    {% assign index = true %}
+    {% include _partial/article_row.html %}
+    {% endfor %}
+    <!--
+    <% if (page.total > 1){ %>
+      <nav id="page-nav" class="clearfix archive-nav">
+        <%- paginator({
+          prev_text: '<span></span>Prev',
+          next_text: 'Next<span></span>'
+        }) %>
+      </nav>
+    <% } %>
+    -->
   </div>
 </div>
